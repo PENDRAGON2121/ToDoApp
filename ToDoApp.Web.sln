@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoApp", "ToDoApp\ToDoApp.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoApp.Model", "ToDoApp.Model\ToDoApp.Model.csproj", "{1AA3C8F4-38D0-46D1-878D-64B0963C8B15}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoApp.BL", "ToDoApp.BL\ToDoApp.BL.csproj", "{1FCEE514-A672-4156-A00C-0FFEEC01B4F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoApp.DAL", "ToDoApp.DAL\ToDoApp.DAL.csproj", "{19D85C1D-AC81-48D1-BC14-D31FF3EE077E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{1AA3C8F4-38D0-46D1-878D-64B0963C8B15}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1AA3C8F4-38D0-46D1-878D-64B0963C8B15}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1AA3C8F4-38D0-46D1-878D-64B0963C8B15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FCEE514-A672-4156-A00C-0FFEEC01B4F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FCEE514-A672-4156-A00C-0FFEEC01B4F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FCEE514-A672-4156-A00C-0FFEEC01B4F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FCEE514-A672-4156-A00C-0FFEEC01B4F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19D85C1D-AC81-48D1-BC14-D31FF3EE077E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19D85C1D-AC81-48D1-BC14-D31FF3EE077E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19D85C1D-AC81-48D1-BC14-D31FF3EE077E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19D85C1D-AC81-48D1-BC14-D31FF3EE077E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
