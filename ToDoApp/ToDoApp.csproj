@@ -7,7 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ToDoApp.BL\ToDoApp.BL.csproj" />
+    <ProjectReference Include="..\ToDoApp.DAL\ToDoApp.DAL.csproj" />
+    <ProjectReference Include="..\ToDoApp.Model\ToDoApp.Model.csproj" />
   </ItemGroup>
 
 </Project>

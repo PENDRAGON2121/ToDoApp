@@ -10,7 +10,7 @@ namespace ToDoApp.DAL
 {
     public class DBContexto : DbContext
     {
-        public DBContexto(DbContextOptions<DBContexto> options) : base(options)
+        public DBContexto(DbContextOptions<DBContexto> opciones) : base(opciones)
         {
         }
         public DbSet<Tarea> Tareas { get; set; }
