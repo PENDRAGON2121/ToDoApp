@@ -25,7 +25,11 @@ namespace ToDoApp.Controllers
         // GET: GestionDeTareasController/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            Model.Tarea detalleTarea;
+
+            detalleTarea = _gestorDeLasTareas.ObtenerUnaTareaPorID(id);
+
+            return View(detalleTarea);
         }
 
         // GET: GestionDeTareasController/Create

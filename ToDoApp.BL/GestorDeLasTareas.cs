@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ToDoApp.DAL;
+using ToDoApp.Model;
 
 namespace ToDoApp.BL
 {
@@ -33,6 +34,19 @@ namespace ToDoApp.BL
             }
 
             return ListaDeTareas;
+        }
+        public Tarea ObtenerUnaTareaPorID(int id) 
+        {
+            Tarea tareaPorId = new Tarea();
+            tareaPorId = conexion.Tareas.Find(id);
+
+            return tareaPorId;
+        }
+        public String AgregarTarea(Tarea tarea)
+        {
+            conexion.Tareas.Add(tarea);
+            conexion.SaveChanges();
+            return "Tarea agregada";
         }
     }
 }
