@@ -37,8 +37,9 @@
                 <div class="mb-3">
                     <label asp-for="Prioridad" class="form-label fw-bold"></label>
                     <select asp-for="Prioridad" class="form-select">
-                        <option value="completo">completo</option>  
-                        <option value="pendiente">Pendiente</option>
+                        <option value="Baja">Baja</option>
+                        <option value="Media">Media</option>
+                        <option value="Alta">Alta</option>
 
                     </select>
                     <span asp-validation-for="Prioridad" class="text-danger small"></span>
