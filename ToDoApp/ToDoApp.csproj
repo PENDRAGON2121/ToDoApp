@@ -22,8 +22,4 @@
     <ProjectReference Include="..\ToDoApp.Model\ToDoApp.Model.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Views\GestionDeTareas\" />
-  </ItemGroup>
-
 </Project>

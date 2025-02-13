@@ -19,7 +19,7 @@ namespace ToDoApp.Controllers
         public ActionResult Index()
         {
             List<Model.Tarea> tareas = _gestorDeLasTareas.ObtengaLaListaDeTareas();
-            return Json(tareas);
+            return View(tareas);
         }
 
         // GET: GestionDeTareasController/Details/5
