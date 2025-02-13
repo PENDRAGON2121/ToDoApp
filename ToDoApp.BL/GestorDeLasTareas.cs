@@ -50,7 +50,6 @@ namespace ToDoApp.BL
             return "Tarea agregada";
         }
 
-        //TODO: realizar el delete
         public void EliminarTareaPorID(int id)
         {
             Tarea tarea;
@@ -58,7 +57,11 @@ namespace ToDoApp.BL
             conexion.Tareas.Remove(tarea);
             conexion.SaveChanges(true);
         }
-        //TODO: Realizar el update 
+        public void ActualizarTarea(Tarea tarea)
+        {
+            conexion.Tareas.Update(tarea);
+            conexion.SaveChanges(true);
+        }
 
 
     }

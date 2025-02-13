@@ -64,17 +64,26 @@ namespace ToDoApp.Controllers
         // GET: GestionDeTareasController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            Tarea tarea;
+            tarea = _gestorDeLasTareas.ObtenerUnaTareaPorID(id);
+            return View(tarea);
         }
 
         // POST: GestionDeTareasController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, Tarea collection)
         {
             try
             {
+                if (!ModelState.IsValid)
+                {
+                    return RedirectToAction(nameof(Index));
+                }
+                
+                _gestorDeLasTareas.ActualizarTarea(collection);
                 return RedirectToAction(nameof(Index));
+
             }
             catch
             {

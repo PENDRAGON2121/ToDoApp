@@ -1,51 +1,57 @@
 ﻿@model ToDoApp.Model.Tarea
-
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Editar Tarea";
 }
+<div class="container">
+    <h1 class="text-primary">Editar Tarea</h1>
+    <hr />
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form asp-action="Edit" class="border p-4 rounded shadow-sm bg-light">
+                <div asp-validation-summary="ModelOnly" class="text-danger small"></div>
 
-<h1>Edit</h1>
+                <!-- Campo ID oculto -->
+                <input type="hidden" asp-for="ID" />
 
-<h4>Tarea</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="ID" class="control-label"></label>
-                <input asp-for="ID" class="form-control" />
-                <span asp-validation-for="ID" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Titulo" class="control-label"></label>
-                <input asp-for="Titulo" class="form-control" />
-                <span asp-validation-for="Titulo" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Descripcion" class="control-label"></label>
-                <input asp-for="Descripcion" class="form-control" />
-                <span asp-validation-for="Descripcion" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Estado" class="control-label"></label>
-                <input asp-for="Estado" class="form-control" />
-                <span asp-validation-for="Estado" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Prioridad" class="control-label"></label>
-                <input asp-for="Prioridad" class="form-control" />
-                <span asp-validation-for="Prioridad" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+                <div class="mb-3">
+                    <label asp-for="Titulo" class="form-label fw-bold"></label>
+                    <input asp-for="Titulo" class="form-control" placeholder="Ingrese el título de la tarea" />
+                    <span asp-validation-for="Titulo" class="text-danger small"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Descripcion" class="form-label fw-bold"></label>
+                    <textarea asp-for="Descripcion" class="form-control" rows="3" placeholder="Descripción de la tarea"></textarea>
+                    <span asp-validation-for="Descripcion" class="text-danger small"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Estado" class="form-label fw-bold"></label>
+                    <select asp-for="Estado" class="form-select">
+                        <option value="Pendiente">Pendiente</option>
+                        <option value="En Progreso">En Progreso</option>
+                        <option value="Completada">Completada</option>
+                    </select>
+                    <span asp-validation-for="Estado" class="text-danger small"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Prioridad" class="form-label fw-bold"></label>
+                    <select asp-for="Prioridad" class="form-select">
+                        <option value="Baja">Baja</option>
+                        <option value="Media">Media</option>
+                        <option value="Alta">Alta</option>
+                    </select>
+                    <span asp-validation-for="Prioridad" class="text-danger small"></span>
+                </div>
+
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-success btn-lg">Guardar Cambios</button>
+                    <a asp-action="Index" class="btn btn-secondary btn-lg">Volver al Listado</a>
+                </div>
+            </form>
+        </div>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
