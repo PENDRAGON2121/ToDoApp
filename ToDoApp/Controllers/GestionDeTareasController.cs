@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ToDoApp.BL;
 using ToDoApp.DAL;
+using ToDoApp.Model;
 
 namespace ToDoApp.Controllers
 {
@@ -26,9 +27,8 @@ namespace ToDoApp.Controllers
         public ActionResult Details(int id)
         {
             Model.Tarea detalleTarea;
-
             detalleTarea = _gestorDeLasTareas.ObtenerUnaTareaPorID(id);
-
+            
             return View(detalleTarea);
         }
 
@@ -41,7 +41,7 @@ namespace ToDoApp.Controllers
         // POST: GestionDeTareasController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(Tarea collection)
         {
             try
             {
