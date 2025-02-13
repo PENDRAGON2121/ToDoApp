@@ -49,5 +49,11 @@ namespace ToDoApp.BL
             conexion.SaveChanges();
             return "Tarea agregada";
         }
+
+        //TODO: realizar el delete
+        
+        //TODO: Realizar el update 
+
+
     }
 }

@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using ToDoApp.BL;
 using ToDoApp.DAL;
 using ToDoApp.Model;
@@ -28,7 +27,7 @@ namespace ToDoApp.Controllers
         {
             Model.Tarea detalleTarea;
             detalleTarea = _gestorDeLasTareas.ObtenerUnaTareaPorID(id);
-            
+
             return View(detalleTarea);
         }
 
@@ -64,13 +63,18 @@ namespace ToDoApp.Controllers
         // GET: GestionDeTareasController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            Tarea tareaEdit = new Tarea();
+
+            tareaEdit = _gestorDeLasTareas.ObtenerUnaTareaPorID(id);
+
+
+            return View(tareaEdit);
         }
 
         // POST: GestionDeTareasController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, Tarea collection)
         {
             try
             {
@@ -102,5 +106,6 @@ namespace ToDoApp.Controllers
                 return View();
             }
         }
+
     }
 }
