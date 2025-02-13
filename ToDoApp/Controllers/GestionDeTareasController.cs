@@ -1,13 +1,24 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ToDoApp.BL;
+using ToDoApp.DAL;
 
 namespace ToDoApp.Controllers
 {
     public class GestionDeTareasController : Controller
     {
+        private GestorDeLasTareas _gestorDeLasTareas;
+
+        public GestionDeTareasController(DBContexto conexion)
+        {
+            _gestorDeLasTareas = new GestorDeLasTareas(conexion);
+        }
+
+
         // GET: GestionDeTareasController
         public ActionResult Index()
         {
+            List<Model.Tarea> tareas = _gestorDeLasTareas.ObtengaLaListaDeTareas();
             return View();
         }
 

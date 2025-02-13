@@ -7,8 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 // Database connection
-var connectionString = builder.Configuration.GetConnectionString("DefaultConection");
-builder.Services.AddDbContext<DBContexto>(x => x.UseSqlServer(connectionString));
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<DBContexto>(options => options.UseNpgsql(connectionString));
 
 var app = builder.Build();
 
@@ -29,6 +29,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=GestionDeTareas}/{action=Index}/{id?}");
 
 app.Run();

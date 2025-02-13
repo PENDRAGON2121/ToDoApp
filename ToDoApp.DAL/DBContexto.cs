@@ -1,9 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ToDoApp.Model;
 
 namespace ToDoApp.DAL
@@ -13,7 +8,7 @@ namespace ToDoApp.DAL
         public DBContexto(DbContextOptions<DBContexto> opciones) : base(opciones)
         {
         }
-        public DbSet<Tarea> Tareas { get; set; }
 
+        public DbSet<Tarea> Tareas { get; set; }
     }
 }
