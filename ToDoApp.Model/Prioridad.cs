@@ -8,8 +8,8 @@ namespace ToDoApp.Model
 {
     public enum Prioridad
     {
-        baja,
-        media,
-        alta
+        Baja,
+        Media,
+        Alta
     }
 }

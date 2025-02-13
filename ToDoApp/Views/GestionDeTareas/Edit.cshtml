@@ -28,9 +28,8 @@
                 <div class="mb-3">
                     <label asp-for="Estado" class="form-label fw-bold"></label>
                     <select asp-for="Estado" class="form-select">
+                        <option value="Completo">Completo</option>
                         <option value="Pendiente">Pendiente</option>
-                        <option value="En Progreso">En Progreso</option>
-                        <option value="Completada">Completada</option>
                     </select>
                     <span asp-validation-for="Estado" class="text-danger small"></span>
                 </div>
@@ -38,9 +37,9 @@
                 <div class="mb-3">
                     <label asp-for="Prioridad" class="form-label fw-bold"></label>
                     <select asp-for="Prioridad" class="form-select">
-                        <option value="Baja">Baja</option>
-                        <option value="Media">Media</option>
-                        <option value="Alta">Alta</option>
+                        <option value="completo">completo</option>  
+                        <option value="pendiente">Pendiente</option>
+
                     </select>
                     <span asp-validation-for="Prioridad" class="text-danger small"></span>
                 </div>
