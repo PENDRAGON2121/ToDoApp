@@ -8,8 +8,10 @@ builder.Services.AddControllersWithViews();
 
 // Database connection
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<DBContexto>(options => options.UseNpgsql(connectionString));
-
+//builder.Services.AddDbContext<DBContexto>(options => options.UseNpgsql(connectionString));
+builder.Services.AddDbContext<DBContexto>(options =>
+    options.UseNpgsql(connectionString)
+           .LogTo(Console.WriteLine, LogLevel.Information)); // Habilita registros detallados
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
