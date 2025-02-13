@@ -51,7 +51,13 @@ namespace ToDoApp.BL
         }
 
         //TODO: realizar el delete
-        
+        public void EliminarTareaPorID(int id)
+        {
+            Tarea tarea;
+            tarea = conexion.Tareas.Find(id);
+            conexion.Tareas.Remove(tarea);
+            conexion.SaveChanges(true);
+        }
         //TODO: Realizar el update 
 
 
