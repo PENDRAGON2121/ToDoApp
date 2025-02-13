@@ -35,17 +35,25 @@ namespace ToDoApp.Controllers
         // GET: GestionDeTareasController/Create
         public ActionResult Create()
         {
-            return View();
+            Tarea tarea = new Tarea();
+
+            return View(tarea);
         }
 
         // POST: GestionDeTareasController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Tarea collection)
+        public ActionResult Create(Tarea Tarea)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                if (ModelState.IsValid)
+                {
+                    _gestorDeLasTareas.AgregarTarea(Tarea);
+                    return RedirectToAction(nameof(Index));
+                }
+
+                return View(Tarea);
             }
             catch
             {
