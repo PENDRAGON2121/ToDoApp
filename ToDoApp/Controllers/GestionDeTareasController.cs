@@ -94,13 +94,17 @@ namespace ToDoApp.Controllers
         // GET: GestionDeTareasController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            Tarea tarea;
+            tarea=_gestorDeLasTareas.ObtenerUnaTareaPorID(id);
+            
+            return View(tarea);
         }
 
         // POST: GestionDeTareasController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+
+        public ActionResult Delete(int id, Tarea collection)
         {
             try
             {
