@@ -15,7 +15,7 @@ namespace ToDoApp.Model
         [Required]
         public string? Titulo { get; set; }
         [Required]
-        [StringLength(50),]
+        [StringLength(100),]
         public string? Descripcion { get; set; }
         [Required]
         public Estado? Estado { get; set; }
