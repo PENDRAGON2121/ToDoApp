@@ -37,8 +37,13 @@ namespace ToDoApp.BL
         }
         public Tarea ObtenerUnaTareaPorID(int id) 
         {
-            Tarea tareaPorId = new Tarea();
+            Tarea? tareaPorId = new Tarea();
             tareaPorId = conexion.Tareas.Find(id);
+
+            if (tareaPorId == null)
+            {
+                throw new Exception("No se encontro la tarea");
+            }
 
             return tareaPorId;
         }
@@ -53,7 +58,7 @@ namespace ToDoApp.BL
         public void EliminarTareaPorID(int id)
         {
             Tarea tarea;
-            tarea = conexion.Tareas.Find(id);
+            tarea = ObtenerUnaTareaPorID(id);
             conexion.Tareas.Remove(tarea);
             conexion.SaveChanges(true);
         }
