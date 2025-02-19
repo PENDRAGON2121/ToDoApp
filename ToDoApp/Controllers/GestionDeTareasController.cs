@@ -69,27 +69,7 @@ namespace ToDoApp.Controllers
             return View(tarea);
         }
 
-        // POST: GestionDeTareasController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, Tarea collection)
-        {
-            try
-            {
-                if (!ModelState.IsValid)
-                {
-                    return RedirectToAction(nameof(Index));
-                }
-                
-                _gestorDeLasTareas.ActualizarTarea(collection);
-                return RedirectToAction(nameof(Index));
 
-            }
-            catch
-            {
-                return View();
-            }
-        }
 
         // GET: GestionDeTareasController/Delete/5
         public ActionResult Delete(int id)
