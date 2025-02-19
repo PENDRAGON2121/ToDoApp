@@ -108,6 +108,7 @@ namespace ToDoApp.Controllers
         {
             try
             {
+                _gestorDeLasTareas.EliminarTareaPorID(id);
                 return RedirectToAction(nameof(Index));
             }
             catch
