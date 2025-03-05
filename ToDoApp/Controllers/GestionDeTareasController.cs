@@ -28,7 +28,11 @@ namespace ToDoApp.Controllers
         {
             Model.Tarea detalleTarea;
             detalleTarea = _gestorDeLasTareas.ObtenerUnaTareaPorID(id);
-            
+
+            if (detalleTarea == null)
+            {
+                return RedirectToAction(nameof(Index));
+            }
             return View(detalleTarea);
         }
 
@@ -66,6 +70,10 @@ namespace ToDoApp.Controllers
         {
             Tarea tarea;
             tarea = _gestorDeLasTareas.ObtenerUnaTareaPorID(id);
+            if (tarea == null)
+            {
+                return RedirectToAction(nameof(Index));
+            }
             return View(tarea);
         }
 
@@ -96,7 +104,11 @@ namespace ToDoApp.Controllers
         {
             Tarea tarea;
             tarea=_gestorDeLasTareas.ObtenerUnaTareaPorID(id);
-            
+
+            if (!ModelState.IsValid)
+            {
+                return RedirectToAction(nameof(Index));
+            }
             return View(tarea);
         }
 
@@ -113,7 +125,7 @@ namespace ToDoApp.Controllers
             }
             catch
             {
-                return View();
+                return RedirectToAction(nameof(Index));
             }
         }
     }

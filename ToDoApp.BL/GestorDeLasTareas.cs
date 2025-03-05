@@ -40,11 +40,6 @@ namespace ToDoApp.BL
             Tarea? tareaPorId = new Tarea();
             tareaPorId = conexion.Tareas.Find(id);
 
-            if (tareaPorId == null)
-            {
-                throw new Exception("No se encontro la tarea");
-            }
-
             return tareaPorId;
         }
         public String AgregarTarea(Tarea tarea)
